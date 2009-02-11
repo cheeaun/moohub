@@ -1,4 +1,4 @@
 MooHub
 ======
 
-GitHub API wrapper, in MooTools. Based on http://github.com/guides/the-github-api
+[GitHub API](http://github.com/guides/the-github-api) wrapper, in [MooTools](http://mootools.net/).

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<title>MooHub</title>
+<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.1/mootools-yui-compressed.js"></script>
+<script src="JsonP.js"></script>
+<script src="moohub.js"></script>
+<script>
+	if (!window.console){
+		window.console = {};
+		window.console.log = function(){};
+	}
+	
+	window.addEvent('domready', function(){
+		var mh = new MooHub();
+		
+		$('grabCommits').addEvent('click', function(){
+			mh.grabCommits('caged', 'gitnub', 'master', function(d){
+				console.log(d);
+			});
+		});
+
+		$('grabCommit').addEvent('click', function(){
+			mh.grabCommit('defunkt', 'github-gem', 'c26d4ce9807ecf57d3f9eefe19ae64e75bcaaa8b', function(d){
+				console.log(d);
+			});
+		});
+
+		$('searchRepo').addEvent('click', function(){
+			mh.searchRepo('merb', function(d){
+				console.log(d);
+			});
+		});
+
+		$('grabUserInfo').addEvent('click', function(){
+			mh.grabUserInfo('defunkt', function(d){
+				console.log(d);
+			});
+		});
+
+	});
+</script>
+<h1>MooHub</h1>
+<button id="grabCommits">grabCommits</button>
+<button id="grabCommit">grabCommit</button>
+<button id="searchRepo">searchRepo</button>
+<button id="grabUserInfo">grabUserInfo</button>
